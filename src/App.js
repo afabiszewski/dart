@@ -2,6 +2,7 @@ import React from 'react';
 import { ChakraProvider, Box, Grid, theme } from '@chakra-ui/react';
 import { ColorModeSwitcher } from './ColorModeSwitcher';
 import { Deck } from './components/Deck';
+import { Player } from './components/Player';
 
 function App() {
   return (
@@ -11,6 +12,9 @@ function App() {
           <ColorModeSwitcher justifySelf="flex-end" />
           <Box mt={2} alignItems={'center'}>
             <Deck />
+          </Box>
+          <Box>
+            <Player name="afabiszewski" points="XL" />
           </Box>
         </Grid>
       </Box>

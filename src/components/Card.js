@@ -7,8 +7,16 @@ function Card(props) {
     height: '100px',
     margin: '8px',
   };
+
+  function cardChosen() {}
+
   return (
-    <Button colorScheme={'teal'} variant={'outline'} style={style}>
+    <Button
+      onClick={cardChosen}
+      colorScheme={'teal'}
+      variant={'outline'}
+      style={style}
+    >
       {props.frontValue}
     </Button>
   );
