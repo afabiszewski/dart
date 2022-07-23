@@ -1,18 +1,28 @@
+import React from 'react';
 import { ButtonGroup } from '@chakra-ui/react';
 import { Card } from './Card';
 
-function Deck() {
-  const cardValues = ['XS', 'S', 'M', 'L', 'XL', 'XXL'];
+class Deck extends React.Component {
+  constructor() {
+    super();
 
-  let deckOfCards = cardValues.map(function (value) {
-    return <Card frontValue={value} />;
-  });
+    var cardValues = ['XS', 'S', 'M', 'L', 'XL', 'XXL'];
 
-  return (
-    <ButtonGroup gap={4} display={'flex'} flexWrap={'wrap'}>
-      {deckOfCards}
-    </ButtonGroup>
-  );
+    //TODO extract to method
+    this.deckOfCards = cardValues.map(function (value) {
+      return <Card frontValue={value} />;
+    });
+
+    this.state = { lastClicked: null };
+  }
+
+  render() {
+    return (
+      <ButtonGroup gap={4} display={'flex'} flexWrap={'wrap'}>
+        {this.deckOfCards}
+      </ButtonGroup>
+    );
+  }
 }
 
 export { Deck };
