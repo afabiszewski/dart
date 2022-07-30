@@ -3,16 +3,13 @@ import { ButtonGroup } from '@chakra-ui/react';
 import { Card } from './Card';
 
 class Deck extends React.Component {
+  cardValues = ['XS', 'S', 'M', 'L', 'XL', 'XXL'];
+  deckOfCards = this.cardValues.map(value => (
+    <Card key={value} frontValue={value} />
+  ));
+
   constructor() {
     super();
-
-    var cardValues = ['XS', 'S', 'M', 'L', 'XL', 'XXL'];
-
-    //TODO extract to method
-    this.deckOfCards = cardValues.map(function (value) {
-      return <Card frontValue={value} />;
-    });
-
     this.state = { lastClicked: null };
   }
 

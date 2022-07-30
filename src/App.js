@@ -2,7 +2,9 @@ import React from 'react';
 import { ChakraProvider, Box, Grid, theme } from '@chakra-ui/react';
 import { ColorModeSwitcher } from './ColorModeSwitcher';
 import { Deck } from './components/Deck';
-import { Player } from './components/Player';
+import { Team } from './components/Team';
+import { NewPlayerForm } from './components/NewPlayerForm';
+import { DeckTypeForm } from './components/DeckTypeForm';
 
 function App() {
   return (
@@ -14,7 +16,13 @@ function App() {
             <Deck />
           </Box>
           <Box>
-            <Player name="afabiszewski" points="XL" />
+            <Team points="XL" />
+          </Box>
+          <Box>
+            <NewPlayerForm />
+          </Box>
+          <Box>
+            <DeckTypeForm />
           </Box>
         </Grid>
       </Box>
